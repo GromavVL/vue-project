@@ -1,0 +1,89 @@
+.wrapper
+    max-width: 1200px
+    margin: 0 auto
+
+.ac
+    text-align: center
+
+.al
+    text-align: left
+
+.ptb20
+    padding-top: 20px
+    padding-bottom: 20px
+
+.alertMsg
+    font-size: inherit
+    padding: 20px 10px
+    position: fixed
+    bottom: 5%
+    left: 2%
+    border-radius: 10px
+    z-index: 999
+    height: auto
+    display: none
+    color: red
+    background-color: rgba(255, 228, 228, 0.75)
+    box-shadow: 0px 0 10px 0px rgba(205, 30, 11, 0.5)
+    animation: slideIn 0.3s linear
+
+.successMsg
+    font-size: inherit
+    padding: 20px 0
+    position: fixed
+    bottom: 5%
+    left: 2%
+    border-radius: 10px
+    z-index: 999
+    height: auto
+    display: none
+    color: green
+    background-color: rgba(218, 249, 223, 0.75)
+    box-shadow: 0px 0 10px 0px rgb(11 205 61 / 50%)
+    animation: slideIn 0.3s normal
+
+.confirm-wrapper
+    text-align: center
+    padding: 10px 0
+
+.confirm-text
+    font-size: 18px
+    color: #333
+    margin-bottom: 30px
+    display: flex
+    align-items: center
+    justify-content: center
+    font-weight: 500
+
+    & i
+        margin-right: 10px
+        font-size: 20px
+        color: #333
+
+.botBtns
+    display: flex
+    justify-content: center
+    gap: 15px
+
+.btnS
+    display: inline-block
+    min-width: 80px
+    padding: 10px 20px
+    background-color: #00d68f
+    color: #fff
+    font-size: 16px
+    font-weight: 600
+    text-decoration: none
+    border-radius: 6px
+    text-align: center
+    box-shadow: 0 4px 6px rgba(0, 214, 143, 0.3)
+    transition: all 0.2s ease
+    cursor: pointer
+
+    &:hover
+        transform: translateY(-2px)
+        box-shadow: 0 6px 12px rgba(0, 214, 143, 0.4)
+        background-color: #00c080
+
+    &:active
+        transform: translateY(0)

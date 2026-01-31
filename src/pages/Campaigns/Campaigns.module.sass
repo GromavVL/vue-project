@@ -1,0 +1,518 @@
+// ========================================
+// Campaigns Page — Modern Design
+// ========================================
+
+// --- Variables ---
+$primary: #6c5ce7
+$primary-dark: #5a4bd1
+$primary-light: #a29bfe
+$accent: #00cec9
+$accent-dark: #00b5b0
+$danger: #ff6b6b
+$danger-dark: #ee5a5a
+$success: #00b894
+$text-primary: #2d3436
+$text-secondary: #636e72
+$text-muted: #b2bec3
+$bg-page: #f8f9fd
+$bg-card: #ffffff
+$border-light: #edf2f7
+$border-medium: #e2e8f0
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04)
+$shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06)
+$shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.08)
+$shadow-hover: 0 8px 25px rgba(108, 92, 231, 0.15)
+$radius-sm: 8px
+$radius-md: 12px
+$radius-lg: 16px
+
+// --- Animations ---
+@keyframes fadeInUp
+  from
+    opacity: 0
+    transform: translateY(16px)
+  to
+    opacity: 1
+    transform: translateY(0)
+
+@keyframes shimmer
+  0%
+    background-position: -200% 0
+  100%
+    background-position: 200% 0
+
+// --- Page Layout ---
+.page-container
+  background-color: $bg-page
+  min-height: 100vh
+  font-family: 'Inter', 'Segoe UI', -apple-system, sans-serif
+  color: $text-primary
+  -webkit-font-smoothing: antialiased
+
+.content-wrapper
+  max-width: 1280px
+  margin: 0 auto
+  padding: 0 28px 40px
+
+// --- Page Header / Toolbar ---
+.toolbar
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding: 32px 0 28px
+  gap: 20px
+  animation: fadeInUp 0.4s ease
+
+.toolbar-left,
+.toolbar-right
+  flex: 1
+
+.toolbar-center
+  display: flex
+  align-items: center
+  justify-content: center
+  gap: 8px
+  background: $bg-card
+  padding: 6px 8px
+  border-radius: $radius-md
+  box-shadow: $shadow-sm
+  border: 1px solid $border-light
+
+.toolbar-right
+  display: flex
+  justify-content: flex-end
+
+.page-title
+  font-size: 26px
+  font-weight: 800
+  color: $text-primary
+  margin: 0
+  white-space: nowrap
+  letter-spacing: -0.5px
+
+// --- Buttons ---
+.btn-primary
+  display: inline-flex
+  align-items: center
+  gap: 8px
+  padding: 11px 22px
+  background: linear-gradient(135deg, $primary, $primary-dark)
+  color: #fff
+  border-radius: $radius-sm
+  text-decoration: none
+  font-weight: 600
+  font-size: 14px
+  border: none
+  cursor: pointer
+  transition: all 0.25s ease
+  box-shadow: 0 4px 12px rgba(108, 92, 231, 0.3)
+  letter-spacing: 0.2px
+
+  &:hover
+    background: linear-gradient(135deg, $primary-light, $primary)
+    box-shadow: 0 6px 20px rgba(108, 92, 231, 0.4)
+    transform: translateY(-1px)
+
+  &:active
+    transform: translateY(0)
+    box-shadow: 0 2px 8px rgba(108, 92, 231, 0.3)
+
+// --- Date Inputs ---
+.date-input
+  background: transparent
+  border: none
+  border-radius: 6px
+  padding: 8px 10px
+  font-size: 13px
+  color: $text-secondary
+  outline: none
+  transition: all 0.2s ease
+  font-family: inherit
+
+  &:focus
+    background: rgba($primary, 0.04)
+    color: $text-primary
+
+  &::-webkit-calendar-picker-indicator
+    cursor: pointer
+    opacity: 0.5
+    transition: opacity 0.2s
+    &:hover
+      opacity: 0.8
+
+.date-separator
+  color: $text-muted
+  font-weight: 400
+  font-size: 16px
+
+// --- Form ---
+.text-input
+  width: 100%
+  padding: 12px 16px
+  border: 2px solid $border-medium
+  border-radius: $radius-sm
+  box-sizing: border-box
+  font-size: 14px
+  font-family: inherit
+  color: $text-primary
+  transition: all 0.25s ease
+  background: $bg-card
+
+  &:focus
+    outline: none
+    border-color: $primary
+    box-shadow: 0 0 0 4px rgba(108, 92, 231, 0.08)
+
+  &::placeholder
+    color: $text-muted
+
+.form-container
+  padding: 16px 8px
+
+.form-group
+  margin-bottom: 24px
+  text-align: left
+
+  & label
+    display: block
+    margin-bottom: 8px
+    font-weight: 600
+    color: $text-secondary
+    font-size: 13px
+    text-transform: uppercase
+    letter-spacing: 0.5px
+
+.form-actions
+  display: flex
+  justify-content: center
+  margin-top: 28px
+
+// --- Table ---
+.table-container
+  background: $bg-card
+  border-radius: $radius-lg
+  box-shadow: $shadow-md
+  overflow: hidden
+  animation: fadeInUp 0.5s ease
+  border: 1px solid $border-light
+
+.data-table
+  width: 100%
+  border-collapse: collapse
+  border-spacing: 0
+
+  & th
+    background: linear-gradient(180deg, #fafbff 0%, #f5f6fa 100%)
+    border-bottom: 2px solid $border-light
+    padding: 16px 18px
+    font-size: 11px
+    font-weight: 700
+    color: $text-muted
+    text-transform: uppercase
+    letter-spacing: 0.8px
+    text-align: left
+    position: sticky
+    top: 0
+    z-index: 1
+
+  & td
+    padding: 18px 18px
+    font-size: 14px
+    color: $text-secondary
+    border-bottom: 1px solid $border-light
+    vertical-align: middle
+    transition: all 0.15s ease
+
+  & tbody tr
+    transition: all 0.2s ease
+
+  & tbody tr:hover
+    background-color: rgba($primary, 0.02)
+
+    & td
+      color: $text-primary
+
+  & tbody tr:last-child td
+    border-bottom: none
+
+  & a
+    text-decoration: none
+    color: inherit
+    font-weight: 500
+    transition: color 0.2s ease
+
+  & a:hover
+    color: $primary
+
+// --- Table Columns ---
+.col-id
+  text-align: center !important
+  width: 60px
+  font-size: 13px !important
+  color: $text-muted !important
+  font-weight: 500 !important
+
+.col-toggle
+  text-align: center !important
+  width: 70px
+
+.col-stat
+  text-align: center !important
+  width: 90px
+  font-variant-numeric: tabular-nums
+
+  & a
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    min-width: 40px
+    padding: 4px 10px
+    border-radius: 20px
+    font-size: 13px
+    font-weight: 600
+    background: rgba($primary, 0.04)
+    color: $text-secondary !important
+    transition: all 0.2s ease
+
+    &:hover
+      background: rgba($primary, 0.1)
+      color: $primary !important
+      transform: scale(1.05)
+
+.col-actions
+  text-align: center !important
+  width: 120px
+
+.col-title
+  font-weight: 600
+  color: $text-primary
+
+.link-primary
+  color: $primary !important
+  position: relative
+
+  &::after
+    content: ''
+    position: absolute
+    bottom: -2px
+    left: 0
+    width: 0
+    height: 2px
+    background: $primary
+    transition: width 0.25s ease
+    border-radius: 1px
+
+  &:hover::after
+    width: 100%
+
+// --- Action Icons ---
+.col-actions a
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  width: 32px
+  height: 32px
+  border-radius: 8px
+  color: $text-muted !important
+  transition: all 0.2s ease
+  margin: 0 2px
+
+  &:hover
+    background: rgba($primary, 0.08)
+    color: $primary !important
+    transform: translateY(-1px)
+
+.icon-delete
+  &:hover
+    background: rgba($danger, 0.08) !important
+    color: $danger !important
+
+// --- Empty State ---
+.empty-state
+  text-align: center
+  padding: 80px 40px
+  color: $text-muted
+  background: $bg-card
+  border-radius: $radius-lg
+  box-shadow: $shadow-sm
+  border: 1px solid $border-light
+  margin-top: 20px
+  font-size: 15px
+  animation: fadeInUp 0.5s ease
+
+  &::before
+    content: '\f07c'
+    font-family: 'Font Awesome 5 Free'
+    font-weight: 400
+    display: block
+    font-size: 48px
+    color: $border-medium
+    margin-bottom: 16px
+
+// --- Spinner ---
+#spinner
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background: rgba(248, 249, 253, 0.85)
+  backdrop-filter: blur(4px)
+  z-index: 9999
+  display: flex
+  justify-content: center
+  align-items: center
+
+  & img
+    width: 48px
+    opacity: 0.7
+
+// ========================================
+// Chart Popup Styles
+// ========================================
+
+.panel
+  display: flex
+  flex-direction: row-reverse
+  justify-content: space-between
+  align-items: center
+  background-color: transparent
+  border-bottom: 1px solid $border-light
+  padding-bottom: 16px
+
+.w30.ptb25 input
+  border: none
+  background: transparent
+  font-family: inherit
+  font-size: 13px
+  color: $text-secondary
+  cursor: pointer
+  outline: none
+  padding: 6px 0
+
+.w70-al
+  flex-grow: 1
+  min-width: 0
+
+// --- Stat Cubes ---
+.cubes
+  display: flex
+  flex-wrap: nowrap
+  width: 100%
+  color: white
+  font-family: inherit
+  border-radius: $radius-md
+  overflow: hidden
+  box-shadow: $shadow-md
+
+  & > div
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    padding: 14px 18px
+    height: 64px
+    flex: 1
+    transition: filter 0.2s
+
+    &:hover
+      filter: brightness(1.08)
+
+  & > div > div:first-child
+    align-self: flex-end
+    font-size: 10px
+    text-transform: uppercase
+    letter-spacing: 1px
+    opacity: 0.85
+    margin-bottom: 4px
+    font-weight: 600
+
+  & > div
+    font-size: 24px
+    font-weight: 700
+    text-align: right
+    line-height: 1.2
+    font-variant-numeric: tabular-nums
+
+.w38-ctr
+  order: 1
+  background-color: $bg-card
+  color: $text-primary
+  border: 1px solid $border-medium
+  border-right: none
+  border-top-left-radius: $radius-md
+  border-bottom-left-radius: $radius-md
+
+  & > div:first-child
+    color: $text-muted
+
+.leads
+  order: 2
+  background: linear-gradient(135deg, #00b894, #00cec9)
+
+.views
+  order: 3
+  background: linear-gradient(135deg, #6c5ce7, #a29bfe)
+
+.clicks
+  order: 4
+  background: linear-gradient(135deg, #0984e3, #74b9ff)
+  border-top-right-radius: $radius-md
+  border-bottom-right-radius: $radius-md
+
+// --- Chart Body ---
+.body
+  display: flex
+  flex-direction: row-reverse
+  padding: 24px
+  gap: 24px
+  align-items: flex-start
+
+#chartOuter.w70
+  flex: 1
+  min-width: 0
+  position: relative
+
+#chartHints
+  display: flex
+  justify-content: space-between
+  font-weight: 700
+  font-size: 13px
+  margin-bottom: 8px
+  font-family: inherit
+  letter-spacing: 0.3px
+
+.filchart
+  width: 260px
+  flex-shrink: 0
+  text-align: right
+  padding-top: 20px
+
+.itemchart
+  display: flex
+  flex-direction: row-reverse
+  align-items: center
+  justify-content: space-between
+  margin-bottom: 8px
+  font-size: 13px
+  font-family: inherit
+  color: $text-secondary
+  cursor: pointer
+  padding: 6px 10px
+  border-radius: $radius-sm
+  transition: all 0.2s ease
+
+  &:hover
+    background: rgba($primary, 0.04)
+    color: $text-primary
+
+#myChart
+  width: 100% !important
+  height: auto !important
+  max-height: 400px
+
+// --- Popup Content ---
+.popup-content
+  padding: 20px
+  color: $text-secondary
+  font-size: 14px
+  line-height: 1.6
